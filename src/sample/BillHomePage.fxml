@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<SplitPane dividerPositions="0.1, 0.1" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           orientation="VERTICAL" fx:controller="sample.BillController" stylesheets="@style.css">
+    <VBox maxHeight="125" minHeight="125" prefHeight="125" id="header">
+        <HBox>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label text="Verisoft Technologies" id="header-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label text="Mahadevsthan, Tinkune" id="sub-header-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label text="9824840876" id="sub-header-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox>
+            <GridPane hgap="15" vgap="5">
+                <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" prefColumnCount="14"/>
+                <Label text="     " GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <Label text="Date" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label fx:id="dateLabel" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+
+                <Label text="Address" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="1" prefColumnCount="14"/>
+                <Label text="     " GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <Label text="Contact No." GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                <TextField fx:id="contactNumberField" GridPane.columnIndex="4" GridPane.rowIndex="1"
+                           prefColumnCount="7"/>
+            </GridPane>
+        </HBox>
+    </VBox>
+
+    <VBox>
+        <HBox maxHeight="35" minHeight="35" prefHeight="35" style="-fx-padding: 4 0 4 40;">
+            <GridPane hgap="60">
+                <TextField fx:id="particularField" GridPane.rowIndex="0" GridPane.columnIndex="0" prefColumnCount="15"
+                           promptText="Particular"/>
+                <TextField fx:id="quantityField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefColumnCount="4"
+                           promptText="Quantity"/>
+                <Button text="Add" GridPane.rowIndex="0" GridPane.columnIndex="2" onAction="#addNewItem"/>
+            </GridPane>
+        </HBox>
+        <HBox>
+            <TableView fx:id="billItemsTableView">
+                <columns>
+                    <TableColumn fx:id="serialNumber" text="S.No." prefWidth="40" minWidth="40" maxWidth="40"/>
+                    <TableColumn fx:id="particulars" text="Particulars" prefWidth="160" minWidth="160" maxWidth="160">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="particular"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="unitPrice" text="Unit Price" prefWidth="100" minWidth="100" maxWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="unitPrice"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="quantity" text="Quantity" prefWidth="100" minWidth="100" maxWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="quantity"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="total" text="Total" prefWidth="100" minWidth="100" maxWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="total"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </HBox>
+    </VBox>
+
+    <HBox maxHeight="175" minHeight="175" prefHeight="175" id="footer">
+        <Pane HBox.hgrow="ALWAYS"/>
+        <GridPane hgap="10" vgap="5">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label text="Gross Total" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label fx:id="grossTotalLabel" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label text="Discount%" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextField fx:id="discountField" GridPane.columnIndex="2" GridPane.rowIndex="1" prefColumnCount="10"/>
+
+            <CheckBox fx:id="vatCheckBox" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Label text="VAT (13%)" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label fx:id="vatLabel" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Label text="Total" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Label fx:id="totalLabel" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <Label text="Cash" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <TextField fx:id="cashField" GridPane.columnIndex="2" GridPane.rowIndex="4" prefColumnCount="10"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <Label text="Refund" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            <Label fx:id="refundLabel" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+            <Label GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="6">
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Print" onAction="#printBill"/>
+            </HBox>
+        </GridPane>
+    </HBox>
+</SplitPane>

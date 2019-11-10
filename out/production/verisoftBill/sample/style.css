@@ -1,0 +1,54 @@
+.split-pane {
+    -fx-padding: 10 5;
+}
+
+.label {
+    -fx-font-size: 13px;
+    -fx-font-family: arial;
+}
+
+.button {
+    -fx-background-color: rgba(0,0,0,0.08),linear-gradient(#9a9a9a, #909090), linear-gradient(white 0%, #f3f3f3 50%, #ececec 51%, #f2f2f2 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 10 3 10;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+    -fx-pref-height: 26px;
+    -fx-pref-width: 90px;
+}
+
+.text-field{
+    -fx-min-height: 8;
+    -fx-max-height: 23;
+}
+
+#header {
+    -fx-spacing: 5;
+    -fx-padding: 1 20;
+}
+
+#header-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+#sub-header-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+#btn-add {
+    -fx-background-color: rgba(0,0,0,0.08),linear-gradient(#9a9a9a, #909090), linear-gradient(white 0%, #f3f3f3 50%, #ececec 51%, #f2f2f2 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 10 3 10;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+    -fx-pref-height: 26px;
+    -fx-pref-width: 50px;
+}
+
+#footer {
+    -fx-padding: 1 5;
+}
